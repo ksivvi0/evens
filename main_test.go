@@ -16,8 +16,6 @@ func BenchmarkEvenPointerWithAppend(b *testing.B) {
 
 	go evenPointerWithAppend(&copyData, results)
 	<-results
-	b.StopTimer()
-	b.ResetTimer()
 }
 
 func BenchmarkEvenMemoryWithIndex(b *testing.B) {
@@ -35,6 +33,4 @@ func BenchmarkEvenMemoryWithAppend(b *testing.B) {
 	go evenMemoryWithAppend(data, results)
 
 	<-results
-	b.StopTimer()
-	b.ResetTimer()
 }
